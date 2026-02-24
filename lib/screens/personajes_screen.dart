@@ -3,42 +3,52 @@ import 'package:flutter/material.dart';
 import '../theme/absolute_theme.dart';
 import '../models/personaje.dart'; // Importamos tu modelo y la lista
 
+// ... tus imports se mantienen igual
+
 class PersonajesScreen extends StatelessWidget {
   const PersonajesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Usamos un Stack por si quieres poner un fondo sutil luego
       body: Stack(
         children: [
+          // Fondo oscuro sólido para mantener el estilo
+          Container(color: kAbsoluteBlack),
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 60), // Espacio para el notch del celular
+                const SizedBox(height: 60),
                 Text(
                   "EXPEDIENTES",
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    letterSpacing: -2, // Toque brutalista: letras más juntas
+                    fontSize: 45,
+                  ),
                 ),
-                const SizedBox(height: 10),
                 Text(
                   "GOTHAM CITY DATABASE",
-                  style: TextStyle(color: kCyanNeon2, letterSpacing: 3),
+                  style: TextStyle(
+                    color: kCyanNeon2, 
+                    letterSpacing: 5, // Contraste brutalista: mucha separación
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
                 const SizedBox(height: 30),
                 
-                // La cuadrícula de personajes
                 Expanded(
                   child: GridView.builder(
-                    // Para que la cuadrícula no choque con la barra ovalada al final
-                    padding: const EdgeInsets.all(100), 
+                    // REDUCIMOS EL PADDING AQUÍ
+                    padding: const EdgeInsets.only(top: 10, bottom: 120), 
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // 2 columnas
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20,
-                      childAspectRatio: 0.65, // Ajuste para que sean tarjetas altas
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 0.75, // Tarjetas un poco más anchas
                     ),
                     itemCount: listaPersonajes.length,
                     itemBuilder: (context, index) {
@@ -55,7 +65,6 @@ class PersonajesScreen extends StatelessWidget {
     );
   }
 
-  // Widget personalizado para cada tarjeta
   Widget _tarjetaPersonaje(BuildContext context, Personaje personaje) {
     return GestureDetector(
       onTap: () {
@@ -68,44 +77,55 @@ class PersonajesScreen extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: kAbsoluteBlack.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(25),
-          border: Border.all(color: kCyanNeon2.withOpacity(0.3), width: 2),
+          color: const Color(0xFF1A1A1A), // Un gris muy oscuro para contraste
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(color: kCyanNeon2, width: 1), // Borde neón sólido
+          boxShadow: [
+            BoxShadow(
+              color: kCyanNeon2.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(4, 4), // Sombra brutalista desplazada
+            )
+          ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(23),
+          borderRadius: BorderRadius.circular(14),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                child: Image.asset(
-                  personaje.imagenRuta,
-                  fit: BoxFit.contain,
-                  alignment: Alignment.topCenter,
-                  // Esto evita que la app truene si una imagen no carga
-                  errorBuilder: (context, error, stackTrace) => 
-                    const Icon(Icons.broken_image, color: Colors.red, size: 50),
+                child: Container(
+                  color: Colors.black,
+                  child: Image.asset(
+                    personaje.imagenRuta,
+                    fit: BoxFit.cover, // Cover se ve más moderno y llena la tarjeta
+                    alignment: Alignment.topCenter,
+                    errorBuilder: (context, error, stackTrace) => 
+                      const Icon(Icons.broken_image, color: Colors.red),
+                  ),
                 ),
               ),
+              // Franja con el nombre abajo
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-                color: kAbsoluteBlack,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  color: kCyanNeon2, // Fondo azul neón para el nombre (Estilo Brutalista)
+                ),
                 child: Text(
                   personaje.nombre,
                   textAlign: TextAlign.center,
-                  maxLines: 1, // Evita que el nombre use dos líneas y rompa la tarjeta
-                  overflow: TextOverflow.ellipsis, // Si es muy largo, pone "..."
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 16, // Bajamos un poco el tamaño para que quepa bien
+                  style: const TextStyle(
+                    color: Colors.black, // Texto negro sobre fondo neón
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    fontFamily: 'Teko', // O la que estés usando para títulos
                   ),
                 ),
               ),
             ],
           ),
         ),
-      )
+      ),
     );
   }
-
-
 }

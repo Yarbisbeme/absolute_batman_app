@@ -34,7 +34,7 @@ class DetallePersonajeScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     personaje.imagenPortada,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     alignment: Alignment.topCenter,
                   ),
                   // Degradado brutalista para fundir con el negro
