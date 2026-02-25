@@ -23,7 +23,7 @@ class _MainNavigationState extends State<MainNavigation> {
   final List<Widget> _screens = [
     const PortadaScreen(),      // Índice 0: Vista de Portada
     const PersonajesScreen(),   // Índice 1: Vista de Personajes
-    const MomentosScreen(),     // Índice 2: Vista de Momentos (Video)
+    MomentosScreen(),
     const AcercaDeScreen(),     // Índice 3: Vista de Información
     const EnMiVidaScreen(),     // Índice 4: Tu Video Personal
   ];

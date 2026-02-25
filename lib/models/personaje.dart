@@ -16,14 +16,14 @@ class Personaje {
 final List<Personaje> listaPersonajes = [
   Personaje(
     nombre: 'ABSOLUTE BATMAN',
-    imagenRuta: 'assets/images/BatmanConHumo.jpg',
-    imagenPortada: 'assets/images/BatmanConHumo.jpg',
+    imagenRuta: 'assets/images/Bruce.png',
+    imagenPortada: 'assets/images/Batman.png',
     descripcion: 'Absolute Batman is a superhero comic book series written by Scott Snyder and primarily illustrated by Nick Dragotta. The first title to be published by DC Comics for their Absolute Universe line, it reimagines the titular vigilante as a blue-collar civil engineer in a much more violent and chaotic Gotham City than is often seen in mainstream DC continuity.',
   ),
   Personaje(
     nombre: 'BANE',
     imagenPortada: 'assets/images/BaneBatman.png',
-    imagenRuta: 'assets/images/BaneBatman.png',
+    imagenRuta: 'assets/images/BaneSentado.png',
     descripcion: 'Bane\'s home country, the Caribbean island Santa Prisca, had been in a state of perpetual war for over a hundred years at the time of his birth. Throughout the last century Santa Prisca had been colonised by multiple foreign powers, each time the indigenous population would revolt and throw out the occupiers, but soon enough someone else would come to plunder the resource-rich nation. Bane\'s father was the leader of one of the country\'s oldest rebel groups, Cielos Libres, as his own father had been before him. Bane was born on a battlefield and grew up in the militia, learning war from his first moments.',
   ),
   Personaje(
