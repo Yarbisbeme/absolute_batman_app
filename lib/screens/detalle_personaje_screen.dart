@@ -17,7 +17,7 @@ class DetallePersonajeScreen extends StatelessWidget {
         slivers: [
           // 1. La Imagen que ocupa la pantalla completa al inicio
           SliverAppBar(
-            expandedHeight: MediaQuery.of(context).size.height * 0.8,
+            expandedHeight: MediaQuery.of(context).size.height * .5,
             backgroundColor: kAbsoluteBlack,
             pinned: true, // Deja el título arriba al bajar
             flexibleSpace: FlexibleSpaceBar(

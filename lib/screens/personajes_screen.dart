@@ -19,14 +19,14 @@ class PersonajesScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 60),
                 Text(
                   "EXPEDIENTES",
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                    letterSpacing: -2, // Toque brutalista: letras más juntas
-                    fontSize: 45,
+                    letterSpacing: -1, // Toque brutalista: letras más juntas
+                    fontSize: 65,
                   ),
                 ),
                 Text(
