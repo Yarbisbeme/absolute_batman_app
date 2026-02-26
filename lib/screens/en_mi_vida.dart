@@ -50,7 +50,7 @@ class _EnMiVidaScreenState extends State<EnMiVidaScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "MI REFLEXIÓN",
+                    "EN MI VIDA",
                     style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       fontSize: 40,
                       letterSpacing: -1,

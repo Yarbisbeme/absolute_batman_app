@@ -25,7 +25,7 @@ class PersonajesScreen extends StatelessWidget {
                 Text(
                   "EXPEDIENTES",
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                    letterSpacing: -1, // Toque brutalista: letras más juntas
+                    letterSpacing: -1, 
                     fontSize: 65,
                   ),
                 ),

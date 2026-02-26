@@ -3,6 +3,7 @@ import 'package:Absolute/screens/en_mi_vida.dart';
 import 'package:Absolute/screens/momentos_screen.dart';
 import 'package:Absolute/screens/personajes_screen.dart';
 import 'package:Absolute/screens/portada_screen.dart';
+import 'package:Absolute/screens/contratame_screen.dart';
 import 'package:flutter/material.dart';
 import '../theme/absolute_theme.dart'; // Importamos nuestros colores
 
@@ -26,6 +27,7 @@ class _MainNavigationState extends State<MainNavigation> {
     MomentosScreen(),
     const AcercaDeScreen(),     // Índice 3: Vista de Información
     const EnMiVidaScreen(),     // Índice 4: Tu Video Personal
+    const ContratameScreen(),     // Índice 4: Tu Video Personal
   ];
 
   @override
@@ -72,6 +74,7 @@ class _MainNavigationState extends State<MainNavigation> {
                     _contruirIcono(Icons.movie_creation_rounded, 2),
                     _contruirIcono(Icons.info_outline, 3),
                     _contruirIcono(Icons.person_pin_circle_rounded, 4),
+                    _contruirIcono(Icons.work, 5),
                   ],
                 ),
               ),
