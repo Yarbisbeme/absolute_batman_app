@@ -13,7 +13,7 @@ class PortadaScreen extends StatelessWidget {
           // Capa 1: La imagen de Batman ocupando TODO el fondo
           Positioned.fill(
             child: Image.asset(
-              'assets/images/BatmanConHumo.jpg',
+              'assets/images/Batman.png',
               fit: BoxFit.contain,
               alignment: Alignment.bottomCenter,
             ),
